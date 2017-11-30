@@ -4,7 +4,7 @@ title: Test Your S3 Configuration
 tagline:
 ---
 
-## Create a sample file to upload
+## Create a 5MB file to upload
 
 ### Linux/Mac OS/xBSD 
 
@@ -29,16 +29,19 @@ New-RandomFile -FileSize 5MB -FileName "5MB"
 
 ## Set utility variables
 
+Using these will make it easy to change scripts and experiment with the tools.
+
 ### Linux/Mac OS/xBSD
 
 ```
 export UNAME=$USER
-export S3_ALIAS=s3-demo-sd2e
-export S3_URI=s3-data-upload.sd2e.org:9001
-export S3_PROTO=https
 export S3_KEY=<Your S3 Key>
 export S3_SECRET=<Your S3 Secret>
+export S3_ALIAS=s3-data-upload
+export S3_URI=s3-data-upload.sd2e.org:9001
+export S3_PROTO=https
 export S3_BUCKET=test
+```
 
 ### Windows Powershell
 
@@ -56,8 +59,10 @@ $S3_BUCKET = "test"
 
 ```
 # Create a subdirectory for your username
+#
 # *YOU CAN'T. AWS CLI DISALLOWS CREATION OF EMPTY DIRECTORIES*
-# Copy a file to a path including your username to create the directory
+#
+# Copy 5MB file to a path including your username to create the directory
 aws --endpoint-url $S3_PROTO://$S3_URI s3 
 aws --endpoint-url $S3_PROTO://$S3_URI s3 cp 5MB s3://$S3_BUCKET/$UNAME/
 # List to verify the file was transferred

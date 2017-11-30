@@ -17,13 +17,13 @@ to replace values for `S3_ALIAS`, `S3_BUCKET`, `S3_KEY`, `S3_SECRET`, and
 `S3_URI` with those provided to you by TACC staff.
 
 ```
-S3_URI=s3-demo.sd2e.org:9001
-S3_BUCKET=example-bucket
+S3_URI=s3-data-upload.sd2e.org:9001
 S3_KEY=DBJKH5A9FITT0KRECU4U
 S3_SECRET=hNGUhiG\G8QC1zzJH91mOFushbcDMD1Yx1
+S3_BUCKET=example-bucket
 S3_REGION=us-east-1
 S3_API=s3v4
-S3_ALIAS=s3-demo-sd2e
+S3_ALIAS=s3-data-upload
 ```
 
 Installation for each client is left to the user as they are all quite
@@ -61,7 +61,7 @@ must always specify an **endpoint URL** when using it with TACC S3. Here's a
 dummy example of an S3 call to listing a TACC-hosted bucket:
 
 ```
-aws --endpoint-url https://s3-demo.sd2e.org:9001 s3 ls s3://example-bucket/
+aws --endpoint-url https://s3-data-upload.sd2e.org:9001 s3 ls s3://example-bucket/
 ```
 
 See "[AWS CLI with Minio][6]" for more details on usage specifics.
@@ -75,15 +75,20 @@ S3 services.
 
 ### Configure
 
-1. Download this connection profile: [S3 (HTTP).cyberduckprofile][12]
-2. Double-click it to install it into CyberDuck. When prompted, enter the following to establish a connection.
+1. Launch CyberDuck. Choose **Open Connection** from the GUI or Files menu
+2. Choose **S3 (Amazon Simple Storage Service)**.
+3. Configure the connection:
 
-Server: s3-demo-sd2e.org
+```
+Server: s3-data-upload.sd2e.org
 Port: 9001
 Access Key ID: DBJKH5A9FITT0KRECU4U
 Secret Key ID: hNGUhiG\G8QC1zzJH91mOFushbcDMD1Yx1
+```
 
-![Cyberduck Configuration](images/cyberduck-http-s3.png)
+![CyberDuck Connection Window](assets/duck.png "Logo Title Text 1")
+
+You should be able to navigate to the `example-bucket` directory when connected.
 
 The makers of CyberDuck also offer "Mountain Duck", which easily mounts
 remote servers as desktop shared volumes. You can find details on how to use
@@ -97,7 +102,7 @@ Minio ships a very nice S3 client called [mc][1] that is compatible not only wit
 ### Configure
 
 ```
-mc config host add s3-demo-sd2e https://s3-demo.sd2e.org:9001 DBJKH5A9FITT0KRECU4U hNGUhiG\G8QC1zzJH91mOFushbcDMD1Yx1 s3v4
+mc config host add s3-demo-sd2e https://s3-data-upload.sd2e.org:9001 DBJKH5A9FITT0KRECU4U hNGUhiG\G8QC1zzJH91mOFushbcDMD1Yx1 s3v4
 ```
 
 Then, use the client as described in its [online guide][1].
@@ -134,7 +139,7 @@ import boto3
 from botocore.client import Config
 
 s3 = boto3.client('s3',
-                  endpoint_url='https://s3-demo.sd2e.org:9001',
+                  endpoint_url='https://s3-data-upload.sd2e.org:9001',
                   aws_access_key_id='DBJKH5A9FITT0KRECU4U',
                   aws_secret_access_key='hNGUhiG\G8QC1zzJH91mOFushbcDMD1Yx1',
                   config=Config(signature_version='s3v4'),
