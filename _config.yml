@@ -1,0 +1,27 @@
+# bundle exec jekyll serve
+exclude: ["Rakefile"]
+highlighter: rouge
+
+title : "SD2E: Synergistic Discovery and Design Environment"
+author :
+  name : TACC SD2E Team
+  email : vaughn@tacc.utexas.edu
+  github : SD2E
+
+production_url : https://sd2e.github.io/s3-user-guide/
+markdown: kramdown
+
+JB :
+  version : 0.3.0
+  BASE_PATH : https://sd2e.github.io/api-user-guide/
+  archive_path: nil
+  categories_path : nil
+  tags_path : nil
+  atom_path : nil
+  rss_path : nil
+  comments :
+    provider : false
+  analytics :
+    provider : false
+  sharing :
+    provider : false
