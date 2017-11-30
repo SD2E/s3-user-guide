@@ -19,11 +19,11 @@ TACC provides S3-compatible upload via Minio, a performant open-source implement
 
 &nbsp;&nbsp;**2 Uploading Experimental Data**
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.1 [Overview of the Workflow](docs/workflow_overview.md)
+&nbsp;&nbsp;&nbsp;&nbsp;2.1 [Workflow Overview](docs/workflow_overview.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.2 [Data Management: Upload Data](docs/data_upload.md)
+&nbsp;&nbsp;&nbsp;&nbsp;2.2 [Upload Experimental Data](docs/data_upload.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.3 [Data Management: Signalling Completion](docs/mark_complete.md)
+&nbsp;&nbsp;&nbsp;&nbsp;2.3 [Signalling Completion](docs/mark_complete.md)
 
 
 <br>

@@ -62,8 +62,8 @@ $S3_BUCKET = "test"
 #
 # *YOU CAN'T. AWS CLI DISALLOWS CREATION OF EMPTY DIRECTORIES*
 #
-# Copy 5MB file to a path including your username to create the directory
-aws --endpoint-url $S3_PROTO://$S3_URI s3 
+# Copy 5MB file to the default bucket path including your username to create
+# a subdirectory there
 aws --endpoint-url $S3_PROTO://$S3_URI s3 cp 5MB s3://$S3_BUCKET/$UNAME/
 # List to verify the file was transferred
 aws --endpoint-url $S3_PROTO://$S3_URI s3 ls s3://$S3_BUCKET/$UNAME/
