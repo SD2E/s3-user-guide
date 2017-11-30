@@ -86,7 +86,7 @@ Access Key ID: DBJKH5A9FITT0KRECU4U
 Secret Key ID: hNGUhiG\G8QC1zzJH91mOFushbcDMD1Yx1
 ```
 
-![CyberDuck Connection Window](assets/duck.png "Logo Title Text 1")
+![CyberDuck Connection](https://sd2e.github.io/s3-user-guide/assets/image.png)
 
 You should be able to navigate to the `example-bucket` directory when connected.
 
