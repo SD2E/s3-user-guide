@@ -11,6 +11,14 @@ all authorized users to upload to. It is not accessible to the rest of the
 SD2E infrastructure. This is what you should use to ensure your S3 client
 is properly configured.
 
+## Web Interface
+
+The SD2E S3 service has a minimal web interface that you can use to validate
+your access credentials and interactively browse buckets to which you have
+access.
+
+It is at https://s3-data-upload.sd2e.org:9001/minio/
+
 ## Create a 5MB file to upload
 
 ### Linux/Mac OS/xBSD
