@@ -4,7 +4,7 @@ title: S3 Service Documentation Overview
 tagline:
 ---
 
-TACC provides S3-compatible upload via Minio, a performant open-source implementation of the S3 server protocol. Minio is almost perfectly compatible with Amazon's S3 managed service, which means that existing S3 tooling just works out of the box. This documentation will cover configuring common S3 clients to access a TACC hosted S3 endpoint and discuss the Q1 data ingest workflow for TA3 providers. Credentials and configuration specifics will be shared via a private channel, as S3 functionality is not currently generally available to SD2E project members. 
+TACC provides S3-compatible upload via Minio, a performant open-source implementation of the S3 server protocol. Minio is almost perfectly compatible with Amazon's S3 managed service, which means that existing S3 tooling just works out of the box. This documentation will cover configuring common S3 clients to access a TACC hosted S3 endpoint and discuss the Q1 data ingest workflow for TA3 providers. Credentials and configuration specifics will be shared via a private channel, as S3 functionality is not currently generally available to SD2E project members.
 
 <br>
 #### Available Documentation
@@ -21,9 +21,9 @@ TACC provides S3-compatible upload via Minio, a performant open-source implement
 
 &nbsp;&nbsp;&nbsp;&nbsp;2.1 [Workflow Overview](docs/workflow_overview.md)
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.2 [Upload Experimental Data](docs/data_upload.md)
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;2.2 [Upload Experimental Data](docs/data_upload.md) -->
 
-&nbsp;&nbsp;&nbsp;&nbsp;2.3 [Signalling Completion](docs/mark_complete.md)
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;2.3 [Signalling Completion](docs/mark_complete.md) -->
 
 
 <br>

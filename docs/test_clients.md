@@ -4,9 +4,16 @@ title: Test Your S3 Configuration
 tagline:
 ---
 
+## Dedicated Testing Bucket
+
+There is a dedicated bucket called ``testing`` which is a free-for-all for
+all authorized users to upload to. It is not accessible to the rest of the
+SD2E infrastructure. This is what you should use to ensure your S3 client
+is properly configured.
+
 ## Create a 5MB file to upload
 
-### Linux/Mac OS/xBSD 
+### Linux/Mac OS/xBSD
 
 ```
 % head -c 5242880 </dev/urandom >5MB
@@ -17,10 +24,10 @@ tagline:
 ```
 Function New-RandomFile {
     Param(
-        $Path = '.', 
-        $FileSize = 1kb, 
+        $Path = '.',
+        $FileSize = 1kb,
         $FileName = '1kb'
-        ) 
+        )
     (1..($FileSize/128)).foreach({-join ([guid]::NewGuid().Guid + [guid]::NewGuid().Guid + [guid]::NewGuid().Guid + [guid]::NewGuid().Guid -Replace "-").SubString(1, 126) }) | set-content "$Path\$FileName"
 }
 
@@ -40,7 +47,7 @@ export S3_SECRET=<Your S3 Secret>
 export S3_ALIAS=s3-data-upload
 export S3_URI=s3-data-upload.sd2e.org:9001
 export S3_PROTO=https
-export S3_BUCKET=test
+export S3_BUCKET=testing
 ```
 
 ### Windows Powershell
@@ -52,16 +59,12 @@ $S3_SECRET = "<Your S3 Secret>"
 $S3_ALIAS = "s3-data-upload"
 $S3_URI = "s3-data-upload.sd2e.org:9001"
 $S3_PROTO = "https"
-$S3_BUCKET = "test"
+$S3_BUCKET = "testing"
 ```
 
 ## AWS CLI
 
 ```
-# Create a subdirectory for your username
-#
-# *YOU CAN'T. AWS CLI DISALLOWS CREATION OF EMPTY DIRECTORIES*
-#
 # Copy 5MB file to the default bucket path including your username to create
 # a subdirectory there
 aws --endpoint-url $S3_PROTO://$S3_URI s3 cp 5MB s3://$S3_BUCKET/$UNAME/
@@ -88,10 +91,10 @@ mc rm $S3_ALIAS/$S3_BUCKET/$UNAME/5MB
 mc rm $S3_ALIAS/$S3_BUCKET/$UNAME
 ```
 
-## CyberDuck 
+## CyberDuck
 
-This client program should be self-explanatory and easy to get 
-going, so we're not including test instructions for it.  
+This client program should be self-explanatory and easy to get
+going, so we're not including test instructions for it.
 
 ---
 Return to the [S3 Documentation Overview](../index.md)
